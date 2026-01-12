@@ -29,13 +29,14 @@ jobs:
       - name: Parse and draw full Corne keymap
         run: |
           # Parse both halves (6 columns per half)
-          keymap parse -c 6 -z config/corne.keymap > corne_keymap.yaml
-          
+          keymap -c keymap_drawer.config.yml parse -c 6 -z config/corne.keymap > corne_keymap.yaml
+
           # Draw full keyboard with both halves combined
-          keymap draw -c keymap_drawer.config.yml corne_keymap.yaml \
+          keymap -c keymap_drawer.config.yml draw corne_keymap.yaml \
             --combine-halves left:right \
             --layer-names Base Sym Nav Fun \
             --output corne_keymap.svg
+
 
 
       - name: Commit SVG
