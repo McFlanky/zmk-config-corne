@@ -8,3 +8,9 @@ draw_config:
   layer_font_size: 12
   # Show hold-tap combos clearly
   show_hold_tap_arrows: true
+
+layers:
+  Base: {}
+  Sym: {}
+  Nav: {}
+  Fun: {}
