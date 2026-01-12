@@ -28,23 +28,9 @@ jobs:
 
       - name: Parse and draw full Corne keymap
         run: |
-          # Backup previous YAML if it exists and is non-empty
-          if [ -s corne_keymap.yaml ]; then
-            cp corne_keymap.yaml corne_keymap_backup.yaml
-            BASE_ARG="-b corne_keymap.yaml"
-          else
-            BASE_ARG=""
-          fi
-
           # Parse both halves (6 columns per half)
-          keymap parse -c 6 -z config/corne.keymap $BASE_ARG > corne_keymap.yaml
-
-          # Check parse output
-          if [ ! -s corne_keymap.yaml ]; then
-            echo "Error: parse produced empty YAML"
-            exit 1
-          fi
-
+          keymap parse -c 6 -z config/corne.keymap > corne_keymap.yaml
+          
           # Draw full keyboard with both halves combined
           keymap draw -c keymap_drawer.config.yaml corne_keymap.yaml \
             --combine-halves left:right \
