@@ -38,4 +38,3 @@ jobs:
         with:
           commit_message: "Update keymap-drawer SVG"
           file_pattern: corne_keymap.svg
-          github_token: ${{ secrets.GITHUB_TOKEN }}
