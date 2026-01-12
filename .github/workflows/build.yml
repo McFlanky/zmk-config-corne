@@ -28,8 +28,8 @@ jobs:
 
       - name: Parse and draw full Corne keymap
         run: |
-          # Backup previous YAML if it exists
-          if [ -f corne_keymap.yaml ]; then
+          # Backup previous YAML if it exists and is non-empty
+          if [ -s corne_keymap.yaml ]; then
             cp corne_keymap.yaml corne_keymap_backup.yaml
             BASE_ARG="-b corne_keymap.yaml"
           else
