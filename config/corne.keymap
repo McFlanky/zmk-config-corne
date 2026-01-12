@@ -24,7 +24,16 @@
 &kp TAB    &kp Q           &kp W           &kp E                    &kp R        &kp T        &kp Y        &kp U            &kp I              &kp O            &kp P               &kp DEL
 &kp LCTRL  &mt LEFT_GUI A  &mt LEFT_ALT S  &mt LEFT_SHIFT D         &mt LCTRL F  &kp G        &kp H        &mt RCTRL J      &mt RIGHT_SHIFT K  &mt RIGHT_ALT L  &mt RIGHT_GUI SEMI  &kp SQT
 &sk LSHFT  &kp Z           &kp X           &kp C                    &kp V        &kp B        &kp N        &kp M            &kp COMMA          &kp DOT          &kp FSLH            &kp ESC
-                                           &mt LEFT_CONTROL ESCAPE  &lt 1 SPACE  &lt 2 TAB    &lt 4 ENTER  &lt 3 BACKSPACE  &sk RIGHT_SHIFT
+                                           &mt LEFT_CONTROL ESCAPE  &lt 2 SPACE  &lt 1 TAB    &lt 2 ENTER  &lt 1 BACKSPACE  &sk RIGHT_SHIFT
+            >;
+        };
+
+        symb_num {
+            bindings = <
+&trans  &trans  &kp EQUAL  &kp MINUS  &kp PLUS          &kp LESS_THAN     &kp GREATER_THAN  &kp CARET          &kp UNDER      &kp PIPE   &trans  &trans
+&trans  &kp N1  &kp N2     &kp N3     &kp N4            &kp N5            &kp N6            &kp N7             &kp N8         &kp N9     &kp N0  &trans
+&trans  &trans  &kp TILDE  &kp GRAVE  &kp LEFT_BRACKET  &kp LEFT_BRACE    &kp RIGHT_BRACE   &kp RIGHT_BRACKET  &kp BACKSLASH  &kp COLON  &trans  &trans
+                           &trans     &trans            &trans            &trans            &trans             &trans
             >;
         };
 
@@ -37,7 +46,7 @@
             >;
         };
 
-        kb_utils {
+        func_kbutils {
             // -----------------------------------------------------------------------------------------
             // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BSPC |
             // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
@@ -45,28 +54,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans     &trans      &trans         &trans        &trans        &trans        &trans
-&trans  &trans  &trans  &trans  &trans  &trans     &bt BT_CLR  &bt BT_SEL 1   &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &trans
-&trans  &trans  &trans  &trans  &trans  &trans     &trans      &trans         &trans        &trans        &trans        &trans
-                        &trans  &trans  &kp TAB    &trans      &kp BACKSPACE  &trans
-            >;
-        };
-
-        symb {
-            bindings = <
-&trans  &kp EXCLAMATION  &kp QUESTION      &kp LEFT_BRACE                   &kp RIGHT_BRACE                     &kp PLUS     &kp DOLLAR  &kp GRAVE                       &kp ASTRK                  &kp CARET  &trans     &trans
-&trans  &kp LESS_THAN    &kp GREATER_THAN  &mt LEFT_SHIFT LEFT_PARENTHESIS  &mt LEFT_CONTROL RIGHT_PARENTHESIS  &kp MINUS    &kp EQUAL   &mt RIGHT_CONTROL SINGLE_QUOTE  &mt RIGHT_SHIFT AMPERSAND  &kp AT     &kp COLON  &trans
-&trans  &kp BACKSLASH    &kp SLASH         &kp LEFT_BRACKET                 &kp RIGHT_BRACKET                   &kp ASTRK    &kp UNDER   &kp DOUBLE_QUOTES               &kp PIPE                   &kp HASH   &kp TILDE  &trans
-                                           &trans                           &trans                              &trans       &trans      &trans                          &trans
-            >;
-        };
-
-        num {
-            bindings = <
-&trans  &kp F1        &kp F2      &kp F3         &kp F4        &kp F5           &kp F6         &kp F7        &kp F8        &kp F9        &kp F10       &kp F11
-&trans  &kp N1        &kp N2      &kp N3         &kp N4        &kp N5           &kp N6         &kp N7        &kp N8        &kp N9        &kp N0        &kp F12
-&trans  &kp LS(EXCL)  &kp LS(AT)  &kp LS(POUND)  &kp LS(DLLR)  &kp LS(PRCNT)    &kp LS(CARET)  &kp LS(AMPS)  &kp LS(STAR)  &kp LS(LPAR)  &kp LS(RPAR)  &trans
-                                  &trans         &trans        &trans           &trans         &trans        &trans
+&trans  &trans   &trans   &trans  &trans  &trans    &trans      &trans        &trans        &trans        &trans        &trans
+&trans  &kp F1   &kp F2   &kp F3  &kp F4  &kp F5    &kp F6      &kp F7        &kp F8        &kp F9        &kp F10       &trans
+&trans  &kp F11  &kp F12  &trans  &trans  &trans    &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &trans
+                          &trans  &trans  &trans    &trans      &trans        &trans
             >;
         };
     };
