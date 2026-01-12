@@ -1,0 +1,10 @@
+draw_config:
+  # Key sizing and spacing
+  key_width: 60
+  key_height: 60
+  key_spacing: 8
+  # Legend font sizes
+  legend_font_size: 14
+  layer_font_size: 12
+  # Show hold-tap combos clearly
+  show_hold_tap_arrows: true
