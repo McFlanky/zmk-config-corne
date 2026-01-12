@@ -31,13 +31,22 @@ jobs:
           # Backup previous YAML if it exists
           if [ -f corne_keymap.yaml ]; then
             cp corne_keymap.yaml corne_keymap_backup.yaml
+            BASE_ARG="-b corne_keymap.yaml"
+          else
+            BASE_ARG=""
           fi
 
-          # Parse both halves (6 columns per half) while preserving old tweaks
-          keymap parse -c 6 -z config/corne.keymap -b corne_keymap.yaml > corne_keymap.yaml
-          
+          # Parse both halves (6 columns per half)
+          keymap parse -c 6 -z config/corne.keymap $BASE_ARG > corne_keymap.yaml
+
+          # Check parse output
+          if [ ! -s corne_keymap.yaml ]; then
+            echo "Error: parse produced empty YAML"
+            exit 1
+          fi
+
           # Draw full keyboard with both halves combined
-          keymap draw -c .github/workflows/keymap_drawer.config.yaml corne_keymap.yaml \
+          keymap draw -c keymap_drawer.config.yaml corne_keymap.yaml \
             --combine-halves left:right \
             --layer-names Base Sym Nav Fun \
             --output corne_keymap.svg
