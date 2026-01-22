@@ -4,14 +4,14 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: m165437        # Added remote for nice-view-gem
-      url-base: https://github.com/M165437
+    - name: infely
+      url-base: https://github.com/infely
   projects:
     - name: zmk
       remote: zmkfirmware
       import: app/west.yml
-    - name: nice-view-gem   # Added project for nice-view-gem
-      remote: m165437
+    - name: nice-view-battery
+      remote: infely                   
       revision: main
   self:
     path: config
